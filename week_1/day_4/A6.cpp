@@ -1,34 +1,31 @@
-class Solution{
-public:
-	int search(string pat, string txt) {
-	    int fre[26]={0};
-	    for(int i=0;i<26;i++){
-	        fre[(pat[i]-'a')]++;
-	    }
-	    int l=0,r=0,ans=0;
-	    while(r>txt.size()){
-	        int fre2[26]={0}
-            while(r-l!=pat.size()){
-                int x=txt[r]-'a';
-                fre2[x]++;
-                r++;
+
+vector<long long> printFirstNegativeInteger(long long int a[], long long int n, long long int k) {
+    
+    long long l = 0, r = 0;
+    queue<long long> q;
+    vector<long long> v;
+    while (r < n) {
+        if(a[r]<0) q.push(a[r]);
+        if ((r - l + 1) == k) {
+            if(q.empty()){
+                v.push_back(0);
             }
-            while(r<txt.size()){
-                if(in>=par.size()){
-                    ans++;
-                }
-                l++;
-                r++;
-                if(txt[l]==txt[r]){
-                    in++;
-                }
-                else in=1;
+            else {
+               v.push_back(q.front());
+               if(q.front()==a[l]){
+                   q.pop();
+               }
             }
-	    }
-	}
-
-};
-
-
-
-//https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1?_gl=1*2hl6h9*_ga*MTYxMTcwOTY2OC4xNjYwMzk1MzY0*_ga_DWCCJLKX3X*MTY5Njc3NDQzNi4xLjEuMTY5Njc3NDUwNy4wLjAuMA..
+            l++;
+            r++;
+        }
+        else {
+            r++;
+        }
+    }
+    return v;
+    
+    
+    
+    
+ }
