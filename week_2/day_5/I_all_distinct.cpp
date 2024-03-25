@@ -8,13 +8,15 @@ int main()
     while(t--){
         int n;
         cin>>n;
-        vector<int> v(n);
+        set<int> st;
         for(int i=0;i<n;i++){
-            cin>>v[i];
+            int x;
+            cin>>x;
+            st.insert(x);
         }
-        for(int i=0;i<n;i=                    ki+2){
-                        .   000 
-        }.
+        int a=n-st.size();
+        int result = st.size()-a%2;
+        cout<<result<<endl;
     }
 
     return 0;

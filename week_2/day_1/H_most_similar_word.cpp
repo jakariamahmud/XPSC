@@ -23,14 +23,11 @@ int main()
                 int temp=0;
                 for(int k=0;k<m;k++){
                     temp += abs((s[i][k]-'a')-(s[j][k]-'a'));
-                    // cout<<s[i][k]-'a' << " - "<<s[j][k]-'a'<<"= "<<temp<<" ";
                 }
-                // cout<<" this "<<ans<<" ";
                 ans = min(ans,temp);
-                // cout<<temp<<endl;
             }
         }
-        cout<<"ans" <<ans<<endl;
+        cout<<ans<<endl;
     }
     return 0;
 }
