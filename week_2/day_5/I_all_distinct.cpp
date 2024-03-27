@@ -14,8 +14,9 @@ int main()
             cin>>x;
             st.insert(x);
         }
-        int a=n-st.size();
-        int result = st.size()-a%2;
+        int size = st.size();
+        int a=n-size;
+        int result = size-a%2;
         cout<<result<<endl;
     }
 
