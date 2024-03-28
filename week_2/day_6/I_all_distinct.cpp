@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 int main()
 {
     int t;
@@ -19,6 +19,6 @@ int main()
         int result = size-a%2;
         cout<<result<<endl;
     }
-
+ 
     return 0;
 }
