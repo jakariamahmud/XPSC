@@ -30,25 +30,33 @@ int main()
         vector<int> v;
         if(a.top().first>=b.top().first){
             if(a.top().first>=c.top().first){
+                
                 ans+=a.top().first;
                 v.push_back(a.top().second);
                 if(b.top()>=c.top()){
+                    
                     if(b.top().second!=v[0]){
                         ans+=b.top().first;
                         v.push_back(b.top().second);
+                        
                     }
                     else{
                         b.pop();
                         ans+=b.top().first;
                         v.push_back(b.top().second);
                     }
-                    if(c.top().second != v[0] || c.top().second != v[1]){
+                    if(c.top().second == v[0] || c.top().second == v[1]){
                         c.pop();
                         ans+=c.top().first;
                     }
-                    else ans+=c.top().first;
+                    else 
+                    {
+                        
+                        ans+=c.top().first;
+                    }
                 }
                 else{
+                    
                     if(c.top().second!=v[0]){
                         ans+=c.top().first;
                         v.push_back(c.top().second);
@@ -58,7 +66,7 @@ int main()
                         ans+=c.top().first;
                         v.push_back(c.top().second);
                     }
-                    if(b.top().second != v[0] || b.top().second != v[1]){
+                    if(b.top().second == v[0] || b.top().second == v[1]){
                         b.pop();
                         ans+=b.top().first;
                     }
@@ -79,7 +87,7 @@ int main()
                         ans+=b.top().first;
                         v.push_back(b.top().second);
                     }
-                    if(a.top().second != v[0] || a.top().second != v[1]){
+                    if(a.top().second == v[0] || a.top().second == v[1]){
                         a.pop();
                         ans+=a.top().first;
                     }
@@ -95,7 +103,7 @@ int main()
                         ans+=a.top().first;
                         v.push_back(a.top().second);
                     }
-                    if(b.top().second != v[0] || b.top().second != v[1]){
+                    if(b.top().second == v[0] || b.top().second == v[1]){
                         b.pop();
                         ans+=b.top().first;
                     }
@@ -117,7 +125,7 @@ int main()
                         ans+=a.top().first;
                         v.push_back(a.top().second);
                     }
-                    if(c.top().second != v[0] || c.top().second != v[1]){
+                    if(c.top().second == v[0] || c.top().second == v[1]){
                         c.pop();
                         ans+=c.top().first;
                     }
@@ -133,7 +141,7 @@ int main()
                         ans+=c.top().first;
                         v.push_back(c.top().second);
                     }
-                    if(a.top().second != v[0] || a.top().second != v[1]){
+                    if(a.top().second == v[0] || a.top().second == v[1]){
                         a.pop();
                         ans+=a.top().first;
                     }
@@ -153,7 +161,7 @@ int main()
                         ans+=b.top().first;
                         v.push_back(b.top().second);
                     }
-                    if(a.top().second != v[0] || a.top().second != v[1]){
+                    if(a.top().second == v[0] || a.top().second == v[1]){
                         a.pop();
                         ans+=a.top().first;
                     }
@@ -169,7 +177,7 @@ int main()
                         ans+=a.top().first;
                         v.push_back(a.top().second);
                     }
-                    if(b.top().second != v[0] || b.top().second != v[1]){
+                    if(b.top().second == v[0] || b.top().second == v[1]){
                         b.pop();
                         ans+=b.top().first;
                     }
@@ -177,7 +185,7 @@ int main()
                 }
             }
         }
-        cout<<"ans-- " <<ans<<endl;
+        cout<<ans<<endl;
     }
     
 
