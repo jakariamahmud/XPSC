@@ -16,26 +16,22 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        long long n,k,ic=0;
+        int n,k;
         cin>>n>>k;
-        vector<long long> v(n),a;
-        for(long long i=0;i<n;i++) cin>>v[i];
-        int l=0,r=0,ans=0,i=v[0];
-        while(r<n){
-            ans|=v[r];
+        vector<int> v(n),pre(n+1);
+        for(int i=0;i<n;i++) cin>>v[i];
+        for(int i=1;i<=n;i++){
+            pre[i]+=(v[i-1]%2)+pre[i-1];
+        }
+        int l=1,r=0,ans=0;
+        while(r<n+1){
             if(r-l+1 ==k){
-                if((ans&1)) ic++;
-                cout<<v[l]<<"-"<<v[r]<<" = ";
-                cout<<ans<<endl;
-                ans^=i;
-                i=ans;
-                // cout<<" "<<ans<<endl;
+                if(pre[r]-pre[l-1]>0) ans++;
                 l++;
             }
             r++;
         }
-        cout<<ic<<endl;
-        // cout<<(5&1)<<endl;
+        cout<<ans<<endl;
     }
       
     return 0;
