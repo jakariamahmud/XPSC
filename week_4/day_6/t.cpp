@@ -1,9 +1,3 @@
-/*
-    ****************************************
-    *      Auther:  Jakaria Mahmud         *
-    *      Date: 16-04-2024 22:30:20       *
-    ****************************************
-*/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -31,16 +25,6 @@ int main()
         }
         mask.push_back(a);
     }
-    // for (int i = 0; i <= m; i++)
-    // {
-    //     for (int j = 0; j < n; j++)
-    //     {
-    //         cout<<mask[i][j];
-    //     }
-    //     cout<<endl;
-        
-    // }
-    // cout<<mask[m].size();
     
 
     int ans=0;
