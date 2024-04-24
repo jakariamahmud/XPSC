@@ -1,26 +1,15 @@
-/*
-    ****************************************
-    *      Auther:  Jakaria Mahmud         *
-    *      Date: 07-04-2024 12:28:35       *
-    ****************************************
-*/
-
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 2e5+6;
-vector<int> v[N];
-long long cnt[N];
 
-void dfs(int n, int x){
-    if(v[n].size()==1 && n!=1) cnt[n]=1;
+long long ic[200005];
+
+void dfs(int n, int x,vector<int> v[]){
+    if(v[n].size()==1 && n!=1) ic[n]=1;
     for(int child:v[n]){
-
-        if(child != x){
-            dfs(child,n);
-            cnt[n]+=cnt[child];
+        if(child!=x){
+            dfs(child,n,v);
+            ic[n]+=ic[child];
         }
-        // cout<<"----";
-        // cout<<n<<" "<<child<<" "<<x<<" "<< cnt[n]<<endl;
     }
 }
 int main()
@@ -33,23 +22,21 @@ int main()
     while(t--){
         int n;
         cin>>n;
-        for(int i=1;i<=n;i++){
-            cnt[i]=0;
-            v[i].clear();
-        }
+        vector<int> v[n+1];
+        memset(ic,0,sizeof(ic));
         for(int i=0;i<n-1;i++){
-            int x,y;
-            cin>>x>>y;
-            v[x].push_back(y);
-            v[y].push_back(x);
-        }  
-        dfs(1,-1);
-        int  q;
+            int a,b;
+            cin>>a>>b;
+            v[a].push_back(b);
+            v[b].push_back(a);
+        }
+        dfs(1,-1,v);
+        int q;
         cin>>q;
         while(q--){
-            int x,y;
-            cin>>x>>y;
-            cout<<cnt[x]*cnt[y]<<endl;
+            int a,b;
+            cin>>a>>b;
+            cout<<ic[a]*ic[b]<<endl;
         }
     }
       
