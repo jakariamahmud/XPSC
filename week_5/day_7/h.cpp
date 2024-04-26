@@ -12,12 +12,13 @@ int main()
     while(t--){
         int n;
         cin>>n;
-        long long sum=0,mn=INT_MAX;
+        long long sum=0,mn=INT_MAX,ic=0;
         for(int i=0;i<n;i++){
             long long x;
             cin>>x;
             sum+=abs(x);
             mn=min(abs(x),mn);
+            ic+=(x<0);
         }
         cout<<sum-(mn*2)<<endl;
     }
