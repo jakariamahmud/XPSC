@@ -19,7 +19,7 @@ int main()
                 if(y>-1) ans= max(ans,j);
             }
         }
-        cout<<a.size()+b.size() - 2*ans<<endl;
+        cout<<a.size()+b.size()-2*ans<<endl;
     }
       
     return 0;
