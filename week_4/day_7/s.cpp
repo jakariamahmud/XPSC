@@ -14,10 +14,12 @@ int main()
     for(int i=0;i<(1<<n);i++){
         int sum=0;
         for(int j=0;j<n;j++){
-            (i&(1<<j)) ? sum+=v[j]: sum-=v[j];
+            if(i&(1<<j)) sum+=v[j];
+            else sum-=v[j];
         }
-        if(!sum%360) f=1;
+        if(!(sum%360)) f=1;
     }
-    cout<<(f?"YES":"NO")<<'\n';
+    if(f) cout<<"YES"<<'\n';
+    else cout<<"NO"<<'\n';
     return 0;
 }
