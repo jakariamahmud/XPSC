@@ -20,7 +20,7 @@ int main()
             mn=min(abs(x),mn);
             ic+=(x<0);
         }
-        cout<<sum-(mn*2)<<endl;
+        cout<<(ic%2?sum-mn*2:sum)<<endl;
     }
       
     return 0;

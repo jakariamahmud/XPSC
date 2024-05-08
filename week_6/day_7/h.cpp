@@ -11,10 +11,6 @@ int main()
     for(int i=1;i<=N;i++){
         pw.push_back(pow(i,3));
     }
-      
-    // for(int i=0;i<N;i++){
-    //     cout<<pw[i]<<" ";
-    // }
     int t;
     cin>>t;
     while(t--){
