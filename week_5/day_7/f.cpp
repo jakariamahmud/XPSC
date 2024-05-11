@@ -5,22 +5,24 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    vector<int> b(32);
+
     int t;
     cin>>t;
     while(t--){
         int n;
         cin>>n;
-        for(int i=1;i<=n;i++){
-            int x;cin>>x;
-            for(int j=0; j<31; j++) b[j]+= ((x>>j) & 1);
+        vector<int> v(n),a(32);
+        for(int i=0;i<n;i++) cin>>v[i];
+
+        for(int i=0;i<32;i++){
+            for(int j=0; j<n; j++) if(v[j] & 1 <<i) a[i]++;
         }
         for(int i=1; i<=n;i++){
-            bool f = 1;
-            for(int j=0; j<31; j++){
-                if(b[j] % i ) f=false;
+            int j=0;
+            for(; j<32; j++){
+                if(a[j] % i ) break;;
             }
-            if(f) cout<<i<<" ";
+            if(j==32) cout<<i<<" ";
         }
         cout<<endl;
     }
