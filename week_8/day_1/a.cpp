@@ -9,12 +9,15 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        float l,a,b;
-        cin>>l>>a>>b;
-        int r1=ceil(l/a)-1,r2=ceil(l/b);
-        if(r1==r2) cout<<0<<endl;
-        else if(r1<r2) cout<<-1<<endl;
-        else cout<<r1-r2<<endl;
+        int n,m;
+        cin>>n>>m;
+        string a,b;
+        cin>>a>>b;
+        for(int i=0;i<n-m;i++){
+            for(int j=i;j<m+i;j++){
+                
+            }
+        }
 
     }
       
