@@ -14,26 +14,26 @@ int main()
         sort(v.begin(),v.end());
         long long ans;
         auto ok=[&](long long a){
-            int ic=1;
-            for(int l=0,r=l+1;r<n;) {
+            int ic=1,l=0,r=1;
+            while(r<n) {
                 if(v[l]+(2*a)>=v[r]) r++;
                 else{
                     ic++;
                     l=r;
-                    r=l;
                 }
             }
-            return (ic<4);
+            return (ic<=3);
         };
         long long l=0,r=LONG_MAX;
         while(l<=r){
-            long long mid = l+(r-l)/2LL;
+            long long mid = l+(r-l)/2;
             if(ok(mid)){
                 ans=mid;
-                r=mid-1LL;
+                r=mid-1;
             }
-            else l = mid+1LL;
+            else l = mid+1;
         }
+        cout<<"ans ";
         cout<<ans<<endl;
     }
       

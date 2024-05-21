@@ -13,12 +13,12 @@ int main()
         for(auto a:v)  m.insert(a);
         for(int i=1;i<=k;i++){
             if(m.empty()) return 0;
-            int range=k-i+1;
-            auto r=m.upper_bound(range);
+            int p=k-i+1;
+            auto r=m.upper_bound(p);
             if(r==m.begin()) return 0;
             m.erase(--r);
             if(!m.empty()){
-                long long b= (*(m.begin()))+range;
+                long long b= (*(m.begin()))+p;
                 m.erase(m.begin()); m.insert(b);
             }
         }

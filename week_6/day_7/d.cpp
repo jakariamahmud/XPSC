@@ -6,35 +6,23 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
       
-    int t;cin>>t;
+    int t,n,k,q,ans;cin>>t;
     while(t--){
-        int n;cin>>n;
-        vector<long long> v(n);
-        for(int i=0;i<n;i++) cin>>v[i];
-        sort(v.begin(),v.end());
-        long long ans;
-        auto ok=[&](long long a){
-            int ic=1;
-            for(int l=0,r=l+1;r<n;) {
-                if(v[l]+(2*a)>=v[r]) r++;
-                else{
-                    ic++;
-                    l=r;
-                    r=l;
-                }
-            }
-            return (ic<4);
-        };
-        long long l=0,r=LONG_MAX;
-        while(l<=r){
-            long long mid = l+(r-l)/2LL;
-            if(ok(mid)){
-                ans=mid;
-                r=mid-1LL;
-            }
-            else l = mid+1LL;
+        cin>>n>>k;
+        vector<int> v(n+1);
+        vector<long long> pre(n+1);
+        for(int i=1;i<=n;i++) {
+            cin>>v[i];
+            pre[i]=pre[i-1]+v[i];
+            v[i]=max(v[i],v[i-1]);
         }
-        cout<<ans<<endl;
+        for(int i=0;i<k;i++){
+            cin>>q;
+            auto ans=upper_bound(v.begin(),v.end(),q)-v.begin();
+            cout<<pre[ans-1]<<" ";
+        }
+        cout<<endl;
+
     }
       
     return 0;
