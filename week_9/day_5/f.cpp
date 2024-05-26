@@ -32,10 +32,10 @@ int main()
             if(f && v[i]==mn) f=0;
             else if(v[i]==1) ans+=v[i];
             else{
-                ans*=v[i];
+                ans = (ans*v[i]);
             }
         }
-        cout<<ans%100000000007<<endl;
+        cout<<ans<<endl;
 
         
     }
