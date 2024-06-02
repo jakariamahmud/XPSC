@@ -14,20 +14,10 @@ int main()
             if(s[i]=='0') ze++;
             else on++;
         }
-        for(int i=0;i<s.size();i++){
-            cout<<ze<<" "<<on<<" "<<s[i]<<endl;
-            if(s[i]=='0' && ze){
-                cout<<"a";
-                ze--;
-            } 
-            else if(s[i]=='1' && on){
-                cout<<"b";
-                on--;
-            }
-            else{
-                cout<<"|";
-                break;
-            }  
+        for(int i=0;i<s.size();i++){ 
+            if(s[i]=='0' && on) on--;
+            else if(s[i]=='1' && ze) ze--;
+            else break;
         }
         cout<<ze+on<<endl;
     }
