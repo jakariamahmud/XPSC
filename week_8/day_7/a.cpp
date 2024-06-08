@@ -8,13 +8,22 @@ int main()
       
     int n;cin>>n;
     if(n%2==0){
-        int x=n/2;
-        cout<<x<<endl;
-        while(x--) cout<<2<<" ";
+        cout<<n/2<<endl;
+        while(n) {
+            cout<<2<<" ";
+            n-=2;
+        }
     }
     else{
-        
+        cout<<n/2<<endl;
+        n-=3;
+        while(n) {
+            cout<<2<<" ";
+            n-=2;
+        }
+        cout<<3<<" ";
     }
+    cout<<endl;
       
     return 0;
 }
